@@ -1,0 +1,189 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+  #main_area, #top_bar {
+    background-color: #e0d17b;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    padding: 5px;
+    box-sizing: inherit;
+    align-items: center;
+  }
+
+  #field {
+      position:relative;
+      justify-content: center;
+      background-color: rgb(7, 71, 7);
+      border-radius: 3px;
+      margin: 0px;
+  }
+
+  h1{
+    text-align: center;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: #382742;
+  }
+
+  #game_command_bar {
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    background-color: #b6aa64;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  #game_command_bar > * {
+    margin: 10px;
+  }
+  
+  .game_tile {
+      position:absolute;
+      box-sizing: border-box;
+      width: 48px;
+      height: 48px;
+      border-radius: 3px;
+      background-color: red;
+      flex: none;
+      margin: 1px;
+  }
+
+  .tile_background {
+    position:absolute;
+    z-index:1;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+  }
+
+  .unit {
+    position: absolute;
+    z-index:3;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+  }
+
+  .unit_visual,.exhausted_unit_visual {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+  }
+
+  .exhausted_unit_visual {
+    filter: grayscale(100%); 
+  }
+
+  .unit_hp {
+    position: absolute;
+    top:100%;
+    left:100%;
+    transform:translate(-100%, -100%);
+    color: white;
+    text-shadow: 0px 0px 3px #000000;
+  }
+
+  .unit_owner_indicator {
+    position: absolute;
+    z-index:5;
+    top: 95%;
+    left: 5%;
+    min-width: 10px;
+    min-height: 10px;
+    transform: translate(0, -100%);
+    border-radius: 2px;
+  }
+
+  .super_area {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+  }
+
+  .sub_area {
+    width:50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #b6aa64;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    padding: 5px;
+    box-sizing: inherit;
+    align-items: center;
+  }
+
+  .indicator {
+    position:absolute;
+    z-index:2;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+  }
+
+  .description_field {
+    align-self: start;
+    margin: 3px;
+    background-color: #9b8f4f;
+    border-radius: 3px;
+    padding: 3px;
+  }
+
+  .description_sub_field {
+    display: grid;
+  }
+
+  .sub_area_element {
+    width: max-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-self: start;
+    background-color: white;
+    padding: 3px;
+  }
+
+  .dropdown {
+    width: max-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-self: start;
+    background-color: white;
+    padding: 3px;
+  }
+
+  .dropdown .content {
+    display: none;
+    position: absolute;
+    
+    margin: auto;
+    padding: 10px 15px;
+  }
+
+  .dropdown_element {
+    min-width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  .dropdown:hover .content{
+    display: grid;
+  }
+
+  #action_menu {
+    position: absolute;
+    z-index:5;
+  }

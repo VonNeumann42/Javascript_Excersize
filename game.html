@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Turn Based Game</title>
+    <link href="game_style.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  
+  <body>
+    <div id = "top_bar">
+        <h1 id="title"> Turn Based Game</h1>
+    </div>
+    
+    <div id="main_area">
+      <div id="game_command_bar">
+        <button id="end_turn_button">End Turn</button>
+        <div id="turn_indicator"><h3 id = "turn_indicator_text">Current Turn:</h3></div>
+        <button id="save_button">Save to clipboard</button>
+        <input id="load_input">
+        <button id="load_button">Load from string</button>
+
+        <div class="dropdown" id="sub_menu">
+          <button class="dropdown_element" id="sub_menu_info">Gameplay info</button>
+          <button class="dropdown_element" id="sub_menu_edit">Map Edit</button>
+          <button class="dropdown_element" id="sub_menu_explanation">Tutorial and introduction</button>
+        </div>
+      </div>
+      <div class="super_area">
+        <div class="sub_area" id="field_area">
+          <div id="field">
+            <div class="dropdown" id="action_menu">
+              <button class="dropdown_element" id="unit_action_wait">Wait</button>
+              <button class="dropdown_element" id="unit_action_attack">Attack</button>
+              <button class="dropdown_element" id="unit_action_cancel">Cancel</button>
+              <button class="dropdown_element" id="unit_action_capture">Capture</button>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="sub_area" id="info_area">
+          <div id="tile_description" class="description_field">
+            <div id="tile_name">Tile_Name</div>
+            <div id="tile_movement" class="description_sub_field">
+              Movement Costs:
+              <div id="tile_movement_foot">1</div>
+              <div id="tile_movement_mounted">1</div>
+              <div id="tile_movement_warmachine">2</div>
+              <div id="tile_movement_flying">1</div>
+            </div>
+            <div id="tile_description_text">placeholder</div>
+          </div>
+          <div id="unit_description" class ="description_field">
+            <div id="unit_name">Unit_Name</div>
+            <div id="unit_health">10</div>
+            <div id="unit_owner">Player 0</div>
+            <div id="unit_motive_type">Foot</div>
+            <div id="unit_description_text">A unit</div>
+            <div id="unit_speed">speed</div>
+            <div id="unit_range">range</div>
+          </div>
+        </div>
+        <div class="sub_area" id="editor_area">
+          <button class="sub_area_element" id="resume_play_button">Stop Editing</button>
+          <div class="dropdown">
+            <div>Select a tile to place</div>
+            <div class="content" id="editor_tile_options">
+              
+            </div>
+          </div>
+          <div class="dropdown">
+            <div>Select a unit to place</div>
+            <div class="content" id="editor_unit_options">
+              
+            </div>
+          </div>
+          <div class="dropdown">
+            <div>Select a controlling player</div>
+            <div class="content" id="editor_owner_options">
+              
+            </div>
+          </div>
+          <div>
+            Unit Health
+            <input type="number" id="editor_health_input">
+          </div>
+          
+        </div>
+        <div class="sub_area" id="tutorial_area">
+          <div>
+            Hi there!
+            Whether through coincidence, or more likely because I personally sent you the link to it, you seem to have found my little turn based game web project.
+            <h3>About me</h3>
+            My name is Jacob, and I am a game designer / programmer from Hamburg Germany. I am still very much at the start of my professional journey, and have much to learn.
+            This project was made primarily to practice my Html, Css and Javascript skills. It is a rather complicated project, and while I have worked with these languages before,
+            I doubtlessly have, all in all, done a rather poor job of it. Nonetheless I had fun working on this project, and I like to think that I have learned a fair bit.
+            If you want to check it out anyway, you are more than welcome to of course!
+            <h3>The rules</h3>
+            This is a turn based tactics game, inspired by games like Advance Wars, and Wargroove. It is played with currently exactly two players on a single device. 
+            Each player takes command of an army, with the goal to wipe out their opponent. To that goal they can command their units to move around the map, and attack enemy units within range. 
+            In addition to units, players may also control buildings, from which they can produce new units. Buildings can't be destroyed, but can be neutralized by the enemy, and can be captured
+            while in a neutral state. 
+            To select a unit or building simply left click on it. If it is a unit of yours, and can still perform an action on this turn, you should see several of the surrounding tiles highlighted. 
+            Click on one of these to move to that tile. After moving a unit, or selecting a building you will be shown a context menu with the available actions. Many of those require you to select 
+            a target as well. 
+
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="game_script.js"></script>
+  </body>
+</html>
