@@ -916,7 +916,12 @@ function select_tile(){
     deselect()
     selected = new_selected
     selected_tile = new_selected_tile
-    set_tile_description()
+    set_tile_description();
+    if(selected_tile.occupying_unit != null){
+        selected_unit = selected_tile.occupying_unit
+        set_unit_description();
+        selected_unit = null;
+    }
 }
 
 // Editor functions
@@ -1156,13 +1161,19 @@ function set_unit_description(){
         unit_description_html["range"].innerText = "Range:" + "-"
         return;
     }
-    const selected_unit_type = selected_unit.unit_type
+    const selected_unit_type = selected_unit.unit_type;
     unit_description_html["type"].innerText = selected_unit_type;
     unit_description_html["description_text"].innerText = unit_types[selected_unit_type]["description"];
-    unit_description_html["motive_type"].innerText = "Movement:" + unit_types[selected_unit_type]["motive_type"]
-    unit_description_html["health"].innerText = "Health:" + selected_unit.health
-    unit_description_html["owner"].innerText = "Player:" + (selected_unit.owner + 1)
-    unit_description_html["owner"].style.setProperty("color",players[selected_unit.owner]);
+    unit_description_html["motive_type"].innerText = "Movement:" + unit_types[selected_unit_type]["motive_type"];
+    unit_description_html["health"].innerText = "Health:" + selected_unit.health;
+    
+    if(selected_unit.owner == -1){
+        unit_description_html["owner"].innerText = "Neutral";
+    } else {
+        unit_description_html["owner"].innerText = "Player:" + (selected_unit.owner + 1);
+        unit_description_html["owner"].style.setProperty("color",players[selected_unit.owner]);
+    }
+   
     unit_description_html["speed"].innerText = "Speed:" + unit_types[selected_unit_type]["movement_speed"];
     unit_description_html["range"].innerText = "Range:" + unit_types[selected_unit_type]["min_attack_range"] + "-" + unit_types[selected_unit_type]["max_attack_range"];
 }
